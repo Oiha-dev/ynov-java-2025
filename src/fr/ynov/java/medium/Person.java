@@ -6,7 +6,7 @@ public class Person {
 
     public static void main(String[] args) {
         Person person = new Person("John", new Date(90, 1, 1), "Male", 1.80f, 80.0f, Country.USA);
-        PrintPerson(person);
+        person.PrintPerson();
     }
 
     public enum Country {
@@ -29,12 +29,12 @@ public class Person {
         this.nationality = nationality;
     }
 
-    public static void PrintPerson(Person person) {
-        System.out.println(person.name + " is a " + birthToAge(person.birthDate) + " year old " + person.gender.toLowerCase() +
-                " from " + person.nationality + ". They are " + person.height + "m tall and weigh " + person.weight + "kg.");
+    public void PrintPerson() {
+        System.out.println(this.name + " is a " + birthToAge() + " year old " + this.gender.toLowerCase() +
+                " from " + this.nationality + ". They are " + this.height + "m tall and weigh " + this.weight + "kg.");
     }
 
-    public static int birthToAge ( Date birthDate ) {
+    public int birthToAge () {
         Date now = new Date();
         return now.getYear() - birthDate.getYear();
     }
