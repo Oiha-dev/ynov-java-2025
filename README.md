@@ -146,3 +146,68 @@ It can be useful to ask the user to enter his name at the beginning of the game.
 Write a beautiful code with comments, good structure, good naming methods, good visibility, etc.
 
 Bonus : you can save the best score in a file and read it at the beginning of the game. Like a leaderboard.  
+
+## Mini-Project - A car rental system
+
+For this project, create your classes into the `fr.ynov.java.car` package.  
+You should respect the Java naming conventions and the best practices (avoid public fields, use getters and setters when needed, etc.).  
+
+Commit and push your code as soon as possible to keep track of your work (and avoid losing it).  
+Use abstract classes, interfaces, enums, etc. when needed or when you think it's a good idea.
+
+### 1. VehicleType Enum
+
+Create an enum `VehicleType` that contains the following values:
+- `SEDAN`
+- `SUV`
+- `SPORT`
+- `TRUCK`
+- `VAN`
+
+### 2. Vehicle Class
+
+Create a class `Vehicle` with the following attributes:
+- `plate` (String)
+- `brand` (String or Brand enum if you want to create it)
+- `model` (String)
+- `type` (VehicleType)
+- `year` (int)
+
+### 3. Truck, Van, SportCar, Sedan, SUV Classes
+
+Create classes that extends the `Vehicle` class for each type of vehicle. You should call a super constructor with the attributes of the vehicle.
+
+### 4. Rentable Interface
+
+Create an interface `Rentable` with the following methods:
+- `double getDailyPrice()` that returns the daily price of the vehicle
+
+Makes the `Vehicle` class implement the `Rentable` interface. This will force you to implement the `getDailyPrice` method in each concrete `Vehicle` class.
+
+### 5. Renting System
+
+Create a class `RentingSystem` that manages the renting of vehicles.
+
+The class should contain a List of vehicles that can be rented (= fleet).
+
+We should be able to manage the fleet of vehicles (add, remove, update) and rent a vehicle.
+
+We should be able to display the list of available vehicles and the list of rented vehicles.
+
+We should be able to rent a vehicle for a given number of days and calculate the total price of the rent.
+
+In this class, you can create a main method to test your code (init the system, classes, adding vehicles, renting vehicles, etc.).
+
+### 6. Advanced
+
+Add a new Customer class that contains the name, the age, and the driver license of the customer.  
+Each customer can rent a vehicle on given dates, but can only have 1 vehicle at a time.  
+Add a method to the RentingSystem to rent a vehicle with a customer.  
+
+For each vehicle, add a list of dates where the vehicle is rented.  
+For each customer or given customer, be able to retrieve the list of rented vehicles and the total price of the rent. 
+As each vehicle has it's plate, you can set a status for the vehicle (rented or not) and update it when the vehicle is rented.  
+The system should not allow 2 vehicles to have the same plate.  
+
+With Scanner, updates your main method (maybe it's preferable to create a new class for the main method) to display a menu to the user to interact with the system.  
+The user should be able to add a vehicle, rent a vehicle, display the list of vehicles, etc.
